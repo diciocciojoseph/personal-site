@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="banner">
+    <img class="portrait" src="{% static 'images/portrait.jpg' %}" alt="Portrait Image Not Found">
+
+    <h3 class="text-white">Joseph DiCioccio</h3>
+
+    <p class="text-light">
+        My name is Joe, I am currently a student at the University of Connecticut studying Computer Science.
+    </p>
+
+    <div style="padding-bottom: 2em;">
+        <a href="https://github.com/diciocciojoseph" class="badge badge-pill badge-success mybadge">GITHUB</a>
+        <a href="google.com" class="badge badge-pill badge-info mybadge">LINKEDIN</a>
+        <a href="google.com" class="badge badge-pill badge-info mybadge">CONTACT INFO</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-columns">
+        {% for content in content_list %}
+        <div class="card bg-dark" style="width: 18rem;">
+            <img class="card-img-top" src="{% static "" %}images/{{content.image_path}}" alt="Image Not Found">
+            <div class="card-body">
+                <h5 class="card-title text-white">{{ content.title }}</h5>
+                <p class="card-text text-light">{{ content.description }}</p>
+                <a href="{{ content.link }}" class="btn btn-info stretched-link">{{ content.link_text }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr class="bg-dark" style="border-width: 0.5em;">
+
+    <div class="projects">
+        <h1 class="text-dark">My Projects</h1>
+    </div>
+</div>
+
+{% endblock %}
