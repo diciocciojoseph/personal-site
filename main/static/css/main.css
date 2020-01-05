@@ -1,20 +1,5 @@
-/* Color Scheme:
-    Try to decide what colors to use as background, navbar/footer, card background, text colors, buttons, toasts, etcs
-    Or just use bootstrap built in color scheme (bg-dark, bg-primary, etc)
-
-    Granite Gray: #606060,
-    Rich Black: #00171F,
-    Prussian Blue: #003459,
-    Cerulean: #007EA7,
-    Vivid Cerulean: #00A8E8,
-    Bright Cerulean: #06AED5,
-    Ku Crimson: #E3170A,
-    UFO Green: #23CE6B,
-
-*/
-
 .card{
-    margin: 2em;
+    margin: 1em;
 }
 
 .card-img-top {
@@ -25,7 +10,6 @@
 
 .banner{
     text-align: center;
-    background-color: #343a40;
 }
 
 .portrait{

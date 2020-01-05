@@ -14,6 +14,12 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# This template directory is currently not in use, instead I decided to give each app it's
+# own template directory if needed. This makes apps more pluggable into other projects if needed
+# A good example of this may be an accounts app, so you do not need to remake the same accounts
+# setup for each website created.
+
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
@@ -87,6 +93,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
+# Can add sha1, argon2m etc hashes and additional password requirements here. See docs for more 
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -122,10 +129,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Django will look for files in these directories when using tags to load files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'main/static'),
 ]
 
+# Redirect users to the home page after login (if login functionality is ever used)
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

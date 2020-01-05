@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Using include allows us to have more modular url setups, where each app is in charge
+# of its own url paths. By defining an app name these can be referenced easily using tagging
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("main.urls", namespace="main")),

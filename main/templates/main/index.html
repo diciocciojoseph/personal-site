@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 
-<div class="banner">
+<!-- Homepage Content -->
+<div class="banner bg-dark">
     <img class="portrait" src="{% static 'images/portrait.jpg' %}" alt="Portrait Image Not Found">
 
     <h3 class="text-white">Joseph DiCioccio</h3>
@@ -18,7 +19,11 @@
     </div>
 </div>
 
+<!-- We only need a single card display here in conjunction with class-based-view context to show all model content -->
+<!-- No matter how many new cards I want to add on the website, this code will not change, good for scalability -->
 <div class="container">
+    <hr class="bg-dark" style="border-width: 0.5em;">
+
     <div class="card-columns">
         {% for content in content_list %}
         <div class="card bg-dark" style="width: 18rem;">
@@ -34,9 +39,33 @@
 
     <hr class="bg-dark" style="border-width: 0.5em;">
 
-    <div class="projects">
-        <h1 class="text-dark">My Projects</h1>
+    <div>
+        <h2 style="text-align: center;">My Projects</h2>
     </div>
+
+    <hr class="bg-dark" style="border-width: 0.5em;">
+
+    <div class="row">
+        <div class="col">
+            <h3>Python 8-Puzzle Solver</h3>
+            <p class="text-dark" style="text-indent: 2em; font-size: 1.3em;">
+                One of my class assignments was to solve the 8-puzzle using the least number of moves.
+                For more info on the 8-puzzle see the <a href="">Wiki</a>. To accomplish this, I employed Breadth-First
+                Search on a graph of all possible puzzle moves. For more details see the
+                <a href="https://github.com/diciocciojoseph">Code</a> on my github. In the future I will revisit this
+                problem with the
+                different approaches.
+            </p>
+        </div>
+        <div class="col">
+            <img src="{% static 'images/puzzle.png' %}" alt="Puzzle Image Not Found">
+        </div>
+    </div>
+
+    <hr class="bg-dark" style="border-width: 0.5em;">
+
 </div>
+
+
 
 {% endblock %}
