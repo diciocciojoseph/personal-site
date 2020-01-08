@@ -6,7 +6,7 @@
 <div class="banner bg-dark">
     <img class="portrait" src="{% static 'images/portrait.jpg' %}" alt="Portrait Image Not Found">
 
-    <h3 class="text-white">Joseph DiCioccio</h3>
+    <h3 class="text-danger">Joseph DiCioccio</h3>
 
     <p class="text-light">
         My name is Joe, I am currently a student at the University of Connecticut studying Computer Science.
@@ -14,16 +14,15 @@
 
     <div style="padding-bottom: 2em;">
         <a href="https://github.com/diciocciojoseph" class="badge badge-pill badge-success mybadge">GITHUB</a>
-        <a href="google.com" class="badge badge-pill badge-info mybadge">LINKEDIN</a>
-        <a href="google.com" class="badge badge-pill badge-info mybadge">CONTACT INFO</a>
+        <a href="https://www.linkedin.com/in/joseph-dicioccio/"
+            class="badge badge-pill badge-primary mybadge">LINKEDIN</a>
+        <a href="google.com" class="badge badge-pill badge-danger mybadge">CONTACT INFO</a>
     </div>
 </div>
 
 <!-- We only need a single card display here in conjunction with class-based-view context to show all model content -->
 <!-- No matter how many new cards I want to add on the website, this code will not change, good for scalability -->
 <div class="container">
-    <hr class="bg-dark" style="border-width: 0.5em;">
-
     <div class="card-columns">
         {% for content in content_list %}
         <div class="card bg-dark" style="width: 18rem;">
@@ -36,36 +35,74 @@
         </div>
         {% endfor %}
     </div>
-
-    <hr class="bg-dark" style="border-width: 0.5em;">
-
-    <div>
-        <h2 style="text-align: center;">My Projects</h2>
-    </div>
-
-    <hr class="bg-dark" style="border-width: 0.5em;">
-
-    <div class="row">
-        <div class="col">
-            <h3>Python 8-Puzzle Solver</h3>
-            <p class="text-dark" style="text-indent: 2em; font-size: 1.3em;">
-                One of my class assignments was to solve the 8-puzzle using the least number of moves.
-                For more info on the 8-puzzle see the <a href="">Wiki</a>. To accomplish this, I employed Breadth-First
-                Search on a graph of all possible puzzle moves. For more details see the
-                <a href="https://github.com/diciocciojoseph">Code</a> on my github. In the future I will revisit this
-                problem with the
-                different approaches.
-            </p>
-        </div>
-        <div class="col">
-            <img src="{% static 'images/puzzle.png' %}" alt="Puzzle Image Not Found">
-        </div>
-    </div>
-
-    <hr class="bg-dark" style="border-width: 0.5em;">
-
 </div>
 
+<div class="bg-dark text-light">
+    <div class="container">
+        <div>
+            <h3 class="text-danger" style="text-align: center;
+             padding-top: 1.2em;
+              padding-bottom: .8em;">
+                My Projects</h3>
+        </div>
 
+        <hr class="bg-light" style="border-width: 0.1em;">
+        <div class="container" style="padding-top: 1em;">
+            <div class="row">
+                <div class="col">
+                    <h5 class="proj-head">Python 8-Puzzle Solver</h5>
+                    <br>
+                    <p style="text-indent: 2em; font-size: 1em;">
+                        One of my class assignments was to solve the 8-puzzle using the least number of moves. Initially
+                        this was accomplished using a simple Breadth-First Search (BFS). This project expands on the
+                        problem,
+                        and employs several different searching algorithms (A* search, for example) to solve the puzzle.
+                        See the <a href="https://github.com/diciocciojoseph">code here</a> for details.
+                        For more information on the 8-puzzle problem see the <a
+                            href="https://en.wikipedia.org/wiki/15_puzzle">wiki here</a>.
+                    </p>
+
+                    <p class="badge badge-pill badge-success mybadge">Python</p>
+                    <p class="badge badge-pill badge-primary mybadge">Games</p>
+                    <p class="badge badge-pill badge-danger mybadge">Algorithms</p>
+                </div>
+
+                <!-- <div class="vl"></div> -->
+
+                <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+                    <img src="{% static 'images/puzzle.png' %}" alt="Puzzle Image Not Found">
+                </div>
+            </div>
+        </div>
+        <hr class="bg-light" style="border-width: 0.1em;">
+    </div>
+
+    <!-- Next Project -->
+
+    <div class="container">
+        <div class="container" style="padding-top: 1em;">
+            <div class="row">
+                <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+                    <img src="{% static 'images/test.png' %}" alt="Puzzle Image Not Found">
+                </div>
+
+                <div class="col">
+                    <h5 class="proj-head">Project 2</h5>
+                    <br>
+                    <p style="text-indent: 2em; font-size: 1em;">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, tenetur mollitia est, nam
+                        libero aperiam autem ducimus nisi quasi, impedit ipsa natus exercitationem quos nihil maxime
+                        labore asperiores possimus assumenda?
+                    </p>
+
+                    <p class="badge badge-pill badge-success mybadge">Tag 1</p>
+                    <p class="badge badge-pill badge-primary mybadge">Tag 2</p>
+                    <p class="badge badge-pill badge-danger mybadge">Tag 3</p>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-light" style="border-width: 0.1em;">
+    </div>
+</div>
 
 {% endblock %}
