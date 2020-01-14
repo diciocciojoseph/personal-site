@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Top Banner Segment -->
-<div class="banner bg-dark">
+<div style="text-align: center;">
     <img class="portrait" src="{% static 'images/portrait.jpg' %}" alt="Portrait Image Not Found">
     <h3 class="text-danger">Joseph DiCioccio</h3>
 
@@ -15,59 +15,101 @@
         <a href="https://github.com/diciocciojoseph" class="badge badge-pill badge-success mybadge">GITHUB</a>
         <a href="https://www.linkedin.com/in/joseph-dicioccio/"
             class="badge badge-pill badge-primary mybadge">LINKEDIN</a>
-        <a href="google.com" class="badge badge-pill badge-danger mybadge">CONTACT INFO</a>
+        <a href="{% url 'main:contact' %}" class="badge badge-pill badge-danger mybadge">CONTACT INFO</a>
     </div>
 </div>
 
 <!-- Main Content -->
-<div class="bg-dark">
-    <div class="container">
 
-        <!-- Display content cards using context from class-based view -->
-        <div class="card-columns">
-            {% for content in content_list %}
-            <div class="card" style="width: 18rem; background:#303030;">
-                <img class="card-img-top" src="{% static "" %}images/{{content.image_path}}" alt="Image Not Found">
-                <div class="card-body">
-                    <h5 class="card-title" style="color: #FFD700;">{{ content.title }}</h5>
-                    <p class="card-text text-light">{{ content.description }}</p>
-                    <a href="{{ content.link }}" class="btn btn-info stretched-link">{{ content.link_text }}</a>
-                </div>
+<div class="container">
+
+    <!-- Display content cards using context from class-based view -->
+    <div class="card-columns">
+        {% for content in content_list %}
+        <div class="card" style="width: 18rem; background:#303030;">
+            <img class="card-img-top" src="{% static "" %}images/{{content.image_path}}" alt="Image Not Found">
+            <div class="card-body">
+                <h5 class="card-title text-danger">{{ content.title }}</h5>
+                <p class="card-text text-light">{{ content.description }}</p>
+                <a href="{{ content.link }}" class="btn btn-info stretched-link">{{ content.link_text }}</a>
             </div>
-            {% endfor %}
         </div>
-    </div>
+        {% endfor %}
 
-    <hr style="border-width: 0.1em; margin-left: 2em; margin-right: 2em; background-color: #FFD700;">
-
-    <!-- Display for projects -->
-    <div class="container" style="padding: 1.5em;">
-        <div class="row">
-            <div class="col">
-                <h5 class="text-danger">Python 8-Puzzle Solver</h5>
-                <br>
-                <p class="text-light" style="text-indent: 2em; font-size: 1em;">
-                    One of my class assignments was to solve the 8-puzzle using the least number of moves. Initially
-                    this was accomplished using a simple Breadth-First Search (BFS). This project expands on the
-                    problem,
-                    and employs several different searching algorithms (A* search, for example) to solve the puzzle.
-                    See the <a href="https://github.com/diciocciojoseph">code here</a> for details.
-                    For more information on the 8-puzzle problem see the <a
-                        href="https://en.wikipedia.org/wiki/15_puzzle">wiki here</a>.
-                </p>
-                <br>
-                <p class="badge badge-pill badge-success mybadge">Python</p>
-                <p class="badge badge-pill badge-primary mybadge">Games</p>
-                <p class="badge badge-pill badge-danger mybadge">Algorithms</p>
+        <!-- Custom cars can be created manually if required -->
+        <div class="card" style="width: 18rem; background:#303030;">
+            <img class="card-img-top" src="{% static 'images/uconn_logo.png'%}" alt="Image Not Found">
+            <div class="card-body">
+                <h5 class="card-title text-danger">About Me</h5>
+                <p class="card-text text-light">Learn some more fun facts about my life!</p>
+                <a href="{% url 'main:about' %}" class="btn btn-info stretched-link">Learn More!</a>
             </div>
+        </div>
+
+    </div>
+</div>
+
+<hr style="border-width: 0.1em; margin-left: 2em; margin-right: 2em; background-color: #FFD700;">
+
+<!-- Display for projects -->
+<div class="container" style="padding: 1.5em;">
+    <div class="row">
+        <div class="col">
+            <h5 class="text-danger">Python 8-Puzzle Solver</h5>
+            <br>
+            <p class="text-light" style="text-indent: 2em; font-size: 1em;">
+                One of my class assignments was to solve the 8-puzzle using the least number of moves. Initially
+                this was accomplished using a simple Breadth-First Search (BFS). This project expands on the
+                problem,
+                and employs several different searching algorithms (A* search, for example) to solve the puzzle.
+                See the <a href="https://github.com/diciocciojoseph">code here</a> for details.
+                For more information on the 8-puzzle problem see the <a
+                    href="https://en.wikipedia.org/wiki/15_puzzle">wiki here</a>.
+            </p>
+            <br>
+            <p class="badge badge-pill badge-success mybadge">Python</p>
+            <p class="badge badge-pill badge-primary mybadge">Games</p>
+            <p class="badge badge-pill badge-danger mybadge">Algorithms</p>
+        </div>
 
 
-            <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+        <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+            <a href="https://github.com/diciocciojoseph/8-puzzle-solver">
                 <img src="{% static 'images/puzzle.png' %}" alt="Puzzle Image Not Found">
-            </div>
+            </a>
         </div>
     </div>
+</div>
 
+<hr style="border-width: 0.1em; margin-left: 2em; margin-right: 2em; background-color: #FFD700;">
+
+<div class="container" style="padding: 1.5em;">
+    <div class="row">
+        <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+            <a href="https://github.com/diciocciojoseph/text-editor-wpf">
+                <img src="{% static 'images/sample_editor.png' %}" alt="Puzzle Image Not Found"></a>
+
+        </div>
+
+        <div class="col">
+            <h5 class="text-danger">Text Editor + Speech Recognition with WPF</h5>
+            <br>
+            <p class="text-light" style="text-indent: 2em; font-size: 1em;">
+                This project is a text-editor clone I build using WPF (Windows Presentation Foundation), a UI
+                framework included in Microsoft's .NET framework. I used XAML
+                (Extensible Application Markup Language) and C# to design and provide functionality to
+                interactive UI elements, including the ability to format text in conventional ways (Font Styles,
+                Sizes, Bold/Italicized/Underlined Text). This editor
+                also allows text-to-speech functionality, which allows the user to talk, and have their words
+                recognized and displayed in the editor. Text files can also be saved and opened. You can see the code 
+                <a href="https://github.com/diciocciojoseph/text-editor-wpf">here</a> on my GitHub.
+            </p>
+            <br>
+            <p class="badge badge-pill badge-success mybadge">C# / XAML / .NET</p>
+            <p class="badge badge-pill badge-primary mybadge">UI Design</p>
+            <p class="badge badge-pill badge-danger mybadge">Applications</p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

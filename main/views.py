@@ -12,3 +12,9 @@ class HomePage(generic.ListView):
     # Setting model variable lets django send a context dictionary to index.html with all model fields
     model = models.Content 
     template_name = 'main/index.html'
+
+class AboutPage(generic.TemplateView):
+    template_name = 'main/about.html'
+
+class ContactPage(generic.TemplateView):
+    template_name = 'main/contact.html'

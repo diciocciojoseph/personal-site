@@ -1,0 +1,102 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="margin-top: 2em;">
+
+    <h2 class="text-danger banner">About Me</h2>
+
+    <hr style="border-width: 0.1em; margin-left: 25em; margin-right: 25em; background-color: #FFD700;">
+
+    <div class="container">
+        <p class="text-light" style="text-indent: 3em; margin-left: 10em; margin-right: 10em;">
+            Hi, my name is Joseph DiCioccio. I am a undergraduate computer science student at the University of
+            Connecticut. I am currently in my second year, estimated to graduate in 2022. I think UConn is a great
+            school and I enjoy it alot there.
+        </p>
+        <div class="container" style="margin-top: 3em; padding: 2em;">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-danger">Why UConn?</h4>
+                    <p class="text-light" style="text-indent: 2em; font-size: 1em;">
+                        While I was still in high school and deciding on different colleges, UConn was one of my target
+                        schools. It was a school that was within my reach academically, and offered many additional
+                        benefits that some other state schools just didn't have. Although I was also accepted to some
+                        out-of-state schools, I decided that I wanted to stay closer to my hometown of Wethersfield, in
+                        which I had spent all of my life in so far.
+                        I also was told that UConn had an
+                        exceptional Computer Science department, and I have not yet been disappointed.
+                    </p>
+                </div>
+
+
+                <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+                    <img src="{% static 'images/uconn_2022.png' %}" alt="Puzzle Image Not Found"
+                        style="width: 80%; height: 80%;">
+
+                    <p class="text-light"><em>UConn Class of 2022 Group Picture - Im in there somewhere!</em></p>
+                </div>
+            </div>
+        </div>
+        <hr style="border-width: 0.1em; margin-left: 1em; margin-right: 1em; background-color: #FFD700;">
+    </div>
+
+    <div class="container" style="margin-top: 3em; padding: 2em;">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-danger">Why Computer Science?</h4>
+                <p class="text-light" style="text-indent: 2em; font-size: 1em;">
+                    Ever since I took my first programming class in high school (AP Computer Science A), I knew that
+                    I wanted a programming-related career. Programming not only quenced my thirst for problem-solving,
+                    but also provided a creative outlet. Most people think of programmers as people who simply sit in
+                    front of a computer all day, inside, staring at a dark screen with all sorts of foreign text and
+                    binary code. But to me, programming is a constructive practice in which I can create anything
+                    I want. One of my favorite parts about building this website was the front-end design style,
+                    playing around with different fonts, colors, and formmating until I am satisfied with the result.
+                    Above all however, programming is a field that is constantly evolving, with new things being
+                    discovered often. This field suits me, a person who never wants to stop learning new things.
+                </p>
+            </div>
+
+
+            <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+                <img src="{% static 'images/Wethersfield.png' %}" alt="Puzzle Image Not Found"
+                    style="width: 90%; height: 90%;">
+
+                <p class="text-light"><em>Wethersfield High School - A wonderful place with brilliant teachers.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border-width: 0.1em; margin-left: 1em; margin-right: 1em; background-color: #FFD700;">
+
+    <div class="container" style="margin-top: 3em; padding: 2em;">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-danger">What About Video Games?</h4>
+                <p class="text-light" style="text-indent: 2em; font-size: 1em;">
+                    Video games have been a key factor in my life. I remember playing classics such as Pokemon Diamond,
+                    and Super Mario Bros. on my Nintendo DS when I was a kid. Later on, I found computer games and
+                    played many different MMO's and Strategy Games. Right now, my favorite game to play is League of
+                    Legends, a MOBA (Multiplayer Online Battle Area) game. In fact I played it to the point where 
+                    reached diamond rank, the top 1% of the ranked ladder. Although video games get a bad rep as 
+                    useless time wasters, I have learned
+                </p>
+            </div>
+
+
+            <div class="col" style="text-align: center; vertical-align: middle; height: 100%;">
+                <img src="{% static 'images/lol.png' %}" alt="Puzzle Image Not Found"
+                    style="width: 90%; height: 90%;">
+
+                <p class="text-light"><em>League of Legends - My favorite video game.</em></p>
+            </div>
+        </div>
+    </div>
+    <hr style="border-width: 0.1em; margin-left: 1em; margin-right: 1em; background-color: #FFD700;">
+
+    <h2 class="text-info" style="text-align: center; margin-bottom: 3em;">
+        <a href="{% url 'main:home'%}">Back To Homepage</a></h2>
+</div>
+
+{% endblock %}
