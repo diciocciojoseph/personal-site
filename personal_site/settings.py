@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "jdicioccio.pythonanywhere.com",
+    "127.0.0.1",
 ]
 
 
@@ -124,8 +125,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/var/www/jdicioccio.pythonanywhere.com/static'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 LOGIN_REDIRECT_URL = "/"
